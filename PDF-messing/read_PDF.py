@@ -3,7 +3,7 @@ from pypdf import PdfReader
 
 #print(pypdf.__version__)
 
-reader = PdfReader("example.pdf")
+reader = PdfReader("SRD_CC_v5.1.pdf")
 number_of_pages = len(reader.pages)
 page = reader.pages[170]
 text = page.extract_text()
