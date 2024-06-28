@@ -11,8 +11,9 @@ leftSide = page.crop((0, 0, 0.5 * float(page.width), page.height), relative=Fals
 rightSide = page.crop((0.5 * float(page.width), 0, page.width, page.height), relative=False, strict=True)
 text = page.extract_text()
 #print(text)
-pdf.close()
+
 leftSide = leftSide.extract_text()
 rightSide = rightSide.extract_text()
 print(leftSide)
-print(rightSide)
+#print(rightSide)
+pdf.close()
