@@ -21,7 +21,7 @@ text_plain = page.extract_text(extraction_mode="plain")
 
 # extract text in a fixed width format that closely adheres to the rendered
 # layout in the source pdf
-print(page.extract_text(extraction_mode="layout"))
+#print(page.extract_text(extraction_mode="layout"))
 
 # extract text preserving horizontal positioning without excess vertical
 # whitespace (removes blank and "whitespace only" lines)
@@ -32,3 +32,5 @@ print(page.extract_text(extraction_mode="layout"))
 
 # exclude (default) or include (as shown below) text rotated w.r.t. the page
 #print(page.extract_text(extraction_mode="layout", layout_mode_strip_rotated=False))
+
+print(page.extract_xform_text)
