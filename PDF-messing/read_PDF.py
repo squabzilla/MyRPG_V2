@@ -5,7 +5,7 @@ from pypdf import PdfReader
 
 reader = PdfReader("SRD_CC_v5.1.pdf")
 number_of_pages = len(reader.pages)
-page = reader.pages[2]
+page = reader.pages[171]
 text_default = page.extract_text()
 text_layout = page.extract_text(extraction_mode="layout")
 text_plain = page.extract_text(extraction_mode="plain")
