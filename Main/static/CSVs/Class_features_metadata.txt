@@ -1,0 +1,43 @@
+feature_text_order: the order that these associated elements belong in
+display type: numeric value associated with type of display
+ - 0: Regular text, i.e. the default
+ - 1: Title
+ - 2: Subtitle
+ - 3: Bullet-points
+ - 4: table-title
+ - 5: table table-column-names
+ - 6: table-items
+
+
+
+Note: line-ends-with means "the characters preceeding the new-line character"
+
+Ctrl + H:
+Find:
+\r\n\r\n
+Replace:
+\r\n
+
+
+if line ends with: 	###: replace with:	#T#	: it's a title
+if line ends with:	#$#:replace with:	#S#	: it's a subtitle
+if line ends with:	$tt$	: table heading I guess?
+if line ends with: %%% : it's a class and I just want to be able to draw a distinction here for my own sanity
+	but this line won't be imported into db - probably
+	also this line will start with TAB
+if line starts with (". "): it's a bullet-point, add #B# to the end
+
+If line ends with a regular letter: replace newline with space
+
+Lines ends with:
+symbols			name
+0	#P#			Regular text - note: #P# denotes paragraph end
+1	###			title
+2	#$#			subtitle
+3	#B#			bullet-points
+4	$tt$		table-title
+5	$tc$		table-column-names
+6	$ti$		table-items
+	
+columns format:
+item 1_::_item 2_::_item 3

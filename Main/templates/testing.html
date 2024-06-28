@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}Testing{% endblock %}
+
+{% block header %}Testing{% endblock %}
+
+{% block main %}
+    <p>We are testing here</p>
+    {% if num_var==0 %}
+        <p>num_var</p>
+    {% endif %}
+    {% if string_var=="soup" %}
+        <p>soup</p>
+    {% endif %}
+    {% if noup=="calcium soup" %}
+        <p>Mmm, calcium</p>
+    {% endif %}
+    {% if noup=="vloop" %}
+        <p>This is not soup! What the doop!</p>
+    {% endif %}
+    
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

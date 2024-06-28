@@ -1,0 +1,27 @@
+Create level 1 character of each class
+attributes (str, dex, con, int, wis, cha) won't be included
+    maybe add these if I have time, it won't be super hard?
+class features, spells will be included
+This means I'll be making a database of JUST level-1 features for initial version
+(while I'm at it, I should make a level_one_spells.csv and import that one instead of all spells lol)
+
+Only classes supportable at first: fighter, wizard
+Fighter means we have to pick fighting style at lvl 1
+Wizard means we have to pick spells at lvl 1
+
+Left to do:
+Actually fucking display the character sheet
+Log in and save, load characters
+-> loading a character can just set the values in the "new_pc = rpg_char_create()" value lol
+-> considering I need code to display that as well, I can re-use the code to display both loaded and created characters this way
+-> getting somewhere, shows up to class-features now
+-> still need to make it prettier and add spells, but progress =D
+
+-> you know what? Don't even have change-password in version to submit
+
+Currently working on displaying spells, having spells show up and an accordion list of spells by level seems nice
+Show attribute of spell as well. Don't do spell attack/save DC. They require proficiency bonus anyways and I'm not there.
+Also a nice text-box filled with "spell-descriptions to come later"
+
+TO-DO:
+DONE

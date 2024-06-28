@@ -1,0 +1,98 @@
+﻿text_id, feature_id, feature_from_class, text_type, text_order, text_text
+278,80,4,0,0,Fighting Style
+279,80,4,2,1,"You adopt a particular style of fighting as your specialty. Choose one of the following options. You can't take a Fighting Style option more than once, even if you later get to choose again."
+280,81,4,1,0,Archery
+281,81,4,2,1,You gain a +2 bonus to attack rolls you make with ranged weapons.
+282,82,4,1,0,Defense
+283,82,4,2,1,"While you are wearing armor, you gain a +1 bonus to AC."
+284,83,4,1,0,Dueling
+285,83,4,2,1,"When you are wielding a melee weapon in one hand and no other weapons, you gain a +2 bonus to damage rolls with that weapon."
+286,84,4,1,0,Great Weapon Fighting
+287,84,4,2,1,"When you roll a 1 or 2 on a damage die for an attack you make with a melee weapon that you are wielding with two hands, you can reroll the die and must use the new roll, even if the new roll is a 1 or a 2. The weapon must have the two-handed or versatile property for you to gain this benefit."
+288,85,4,1,0,Protection
+289,85,4,2,1,"When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield."
+290,86,4,1,0,Two-Weapon Fighting
+291,86,4,2,1,"When you engage in two-weapon fighting, you can add your ability modifier to the damage of the second attack."
+292,87,4,0,0,Second Wind
+293,87,4,2,1,"You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again."
+294,88,4,0,0,Action Surge
+295,88,4,2,1,"Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action."
+296,88,4,2,2,"Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn."
+297,89,4,0,0,Martial Archetype
+298,89,4,2,1,"At 3rd level, you choose an archetype that you strive to emulate in your combat styles and techniques, such as Champion. The archetype you choose grants you features at 3rd level and again at 7th, 10th, 15th, and 18th level."
+299,90,4,0,0,Ability Score Improvement
+300,90,4,2,1,"When you reach 4th level, and again at 6th, 8th, 12th, 14th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+301,91,4,0,0,Extra Attack
+302,91,4,2,1,"Beginning at 5th level, you can attack twice, instead of once, whenever you take the Attack action on your turn."
+303,91,4,2,2,The number of attacks increases to three when you reach 11th level in this class and to four when you reach 20th level in this class.
+304,92,4,0,0,Indomitable
+305,92,4,2,1,"Beginning at 9th level, you can reroll a saving throw that you fail. If you do so, you must use the new roll, and you can't use this feature again until you finish a long rest."
+306,92,4,2,2,You can use this feature twice between long rests starting at 13th level and three times between long rests starting at 17th level.
+307,93,4,0,0,Champion
+308,93,4,2,1,The archetypal Champion focuses on the development of raw physical power honed to deadly perfection. Those who model themselves on this archetype combine rigorous training with physical excellence to deal devastating blows.
+309,94,4,1,0,Improved Critical
+310,94,4,2,1,"Beginning when you choose this archetype at 3rd level, your weapon attacks score a critical hit on a roll of 19 or 20."
+311,95,4,1,0,Remarkable Athlete
+312,95,4,2,1,"Starting at 7th level, you can add half your proficiency bonus (round up) to any Strength, Dexterity, or Constitution check you make that doesn't already use your proficiency bonus."
+313,95,4,2,2,"In addition, when you make a running long jump, the distance you can cover increases by a number of feet equal to your Strength modifier."
+314,96,4,1,0,Additional Fighting Style
+315,96,4,2,1,"At 10th level, you can choose a second option from the Fighting Style class feature."
+316,97,4,1,0,Superior Critical
+317,97,4,2,1,"Starting at 15th level, your weapon attacks score a critical hit on a roll of 18-20."
+318,98,4,1,0,Survivor
+319,98,4,2,1,"At 18th level, you attain the pinnacle of resilience in battle. At the start of each of your turns, you regain hit points equal to 5 + your Constitution modifier if you have no more than half of your hit points left. You don't gain this benefit if you have 0 hit points."
+853,287,11,0,0,Spellcasting
+854,287,11,2,1,"As a student of arcane magic, you have a spellbook containing spells that show the first glimmerings of your true power."
+855,288,11,1,0,Cantrips
+856,288,11,2,1,"At 1st level, you know three cantrips of your choice from the wizard spell list. You learn additional wizard cantrips of your choice at higher levels, as shown in the Cantrips Known column of the Wizard table."
+857,289,11,1,0,Spellbook
+858,289,11,2,1,"At 1st level, you have a spellbook containing six 1st-level wizard spells of your choice. Your spellbook is the repository of the wizard spells you know, except your cantrips, which are fixed in your mind."
+859,289,11,2,2,"The spells that you add to your spellbook as you gain levels reflect the arcane research you conduct on your own, as well as intellectual breakthroughs you have had about the nature of the multiverse. You might find other spells during your adventures. You could discover a spell recorded on a scroll in an evil wizard's chest, for example, or in a dusty tome in an ancient library."
+860,289,11,2,3,"<b>Copying a Spell into the Book.</b> When you find a wizard spell of 1st level or higher, you can add it to your spellbook if it is of a spell level you can prepare and if you can spare the time to decipher and copy it."
+861,289,11,2,4,"Copying that spell into your spellbook involves reproducing the basic form of the spell, then deciphering the unique system of notation used by the wizard who wrote it. You must practice the spell until you understand the sounds or gestures required, then transcribe it into your spellbook using your own notation."
+862,289,11,2,5,"For each level of the spell, the process takes 2 hours and costs 50 gp. The cost represents material components you expend as you experiment with the spell to master it, as well as the fine inks you need to record it. Once you have spent this time and money, you can prepare the spell just like your other spells."
+863,289,11,2,6,"<b>Replacing the Book.</b> You can copy a spell from your own spellbook into another book-for example, if you want to make a backup copy of your spellbook. This is just like copying a new spell into your spellbook, but faster and easier, since you understand your own notation and already know how to cast the spell. You need spend only 1 hour and 10 gp for each level of the copied spell."
+864,289,11,2,7,"If you lose your spellbook, you can use the same procedure to transcribe the spells that you have prepared into a new spellbook. Filling out the remainder of your spellbook requires you to find new spells to do so, as normal. For this reason, many wizards keep backup spellbooks in a safe place."
+865,289,11,2,8,"<b>The Book's Appearance.</b> Your spellbook is a unique compilation of spells, with its own decorative flourishes and margin notes. It might be a plain, functional leather volume that you received as a gift from your master, a finely bound gilt-edged tome you found in an ancient library, or even a loose collection of notes scrounged together after you lost your previous spellbook in a mishap."
+866,290,11,1,0,Preparing and Casting Spells
+867,290,11,2,1,"The Wizard table shows how many spell slots you have to cast your spells of 1st level and higher. To cast one of these spells, you must expend a slot of the spell's level or higher. You regain all expended spell slots when you finish a long rest."
+868,290,11,2,2,"You prepare the list of wizard spells that are available for you to cast. To do so, choose a number of wizard spells from your spellbook equal to your Intelligence modifier + your wizard level (minimum of one spell). The spells must be of a level for which you have spell slots."
+869,290,11,2,3,"For example, if you're a 3rd-level wizard, you have four 1st-level and two 2nd-level spell slots. With an Intelligence of 16, your list of prepared spells can include six spells of 1st or 2nd level, in any combination, chosen from your spellbook. If you prepare the 1st-level spell magic missile, you can cast it using a 1st-level or a 2nd-level slot. Casting the spell doesn't remove it from your list of prepared spells."
+870,290,11,2,4,You can change your list of prepared spells when you finish a long rest. Preparing a new list of wizard spells requires time spent studying your spellbook and memorizing the incantations and gestures you must make to cast the spell: at least 1 minute per spell level for each spell on your list.
+871,291,11,1,0,Spellcasting Ability
+872,291,11,2,1,"Intelligence is your spellcasting ability for your wizard spells, since you learn your spells through dedicated study and memorization. You use your Intelligence whenever a spell refers to your spellcasting ability. In addition, you use your Intelligence modifier when setting the saving throw DC for a wizard spell you cast and when making an attack roll with one."
+873,291,11,2,2,<b>Spell save DC</b> = 8 + your proficiency bonus + your Intelligence modifier
+874,291,11,2,3,<b>Spell attack modifier</b> = your proficiency bonus + your Intelligence modifier
+875,292,11,1,0,Ritual Casting
+876,292,11,2,1,You can cast a wizard spell as a ritual if that spell has the ritual tag and you have the spell in your spellbook. You don't need to have the spell prepared.
+877,293,11,1,0,Spellcasting Focus
+878,293,11,2,1,You can use an arcane focus as a spellcasting focus for your wizard spells.
+879,294,11,1,0,Learning Spells of Ist Level and Higher
+880,294,11,2,1,"Each time you gain a wizard level, you can add two wizard spells of your choice to your spellbook for free. Each of these spells must be of a level for which you have spell slots, as shown on the Wizard table. On your adventures, you might find other spells that you can add to your spellbook (see Spellbook)."
+881,295,11,0,0,Arcane Recovery
+882,295,11,2,1,"You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher."
+883,295,11,2,2,"For example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots."
+884,296,11,0,0,Arcane Tradition
+885,296,11,2,1,"When you reach 2nd level, you choose an arcane tradition, shaping your practice of magic."
+886,296,11,2,2,"Your choice grants you features at 2nd level and again at 6th, 10th, and 14th level."
+887,297,11,0,0,Ability Score Improvement
+888,297,11,2,1,"When you reach 4th level, and again at 8th, 12th, 16th, and 19th level, you can increase one ability score of your choice by 2, or you can increase two ability scores of your choice by 1. As normal, you can't increase an ability score above 20 using this feature."
+889,298,11,0,0,Spell Mastery
+890,298,11,2,1,"At 18th level, you have achieved such mastery over certain spells that you can cast them at will. Choose a 1st-level wizard spell and a 2nd-level wizard spell that are in your spellbook. You can cast those spells at their lowest level without expending a spell slot when you have them prepared. If you want to cast either spell at a higher level, you must expend a spell slot as normal."
+891,298,11,2,2,"By spending 8 hours in study, you can exchange one or both of the spells you chose for different spells of the same levels."
+892,299,11,0,0,Signature Spells
+893,299,11,2,1,"When you reach 20th level, you gain mastery over two powerful spells and can cast them with little effort. Choose two 3rd-level wizard spells in your spellbook as your signature spells. You always have these spells prepared, they don't count against the number of spells you have prepared, and you can cast each of them once at 3rd level without expending a spell slot. When you do so, you can't do so again until you finish a short or long rest."
+894,299,11,2,2,"If you want to cast either spell at a higher level, you must expend a spell slot as normal."
+895,300,11,0,0,Tradition of Destruction
+896,300,11,2,1,"You focus your study on magic that creates powerful elemental effects such as bitter cold, searing flame, rolling thunder, crackling lightning, and burning acid. Some evokers find employment in military forces, serving as artillery to blast enemy armies from afar. Others use their spectacular power to protect the weak, while some seek their own gain as bandits, adventurers, or aspiring tyrants."
+897,301,11,1,0,Destructive Savant
+898,301,11,2,1,"Beginning when you select this school at 2nd level, the gold and time you must spend to copy an evocation spell into your spellbook is halved."
+899,302,11,1,0,Sculpt Spells
+900,302,11,2,1,"Beginning at 2nd level, you can create pockets of relative safety within the effects of your evocation spells. When you cast an evocation spell that affects other creatures that you can see, you can choose a number of them equal to 1 + the spell's level. The chosen creatures automatically succeed on their saving throws against the spell, and they take no damage if they would normally take half damage on a successful save."
+901,303,11,1,0,Potent Cantrip
+902,303,11,2,1,"Starting at 6th level, your damaging cantrips affect even creatures that avoid the brunt of the effect. When a creature succeeds on a saving throw against your cantrip, the creature takes half the cantrip's damage (if any) but suffers no additional effect from the cantrip."
+903,304,11,1,0,Empowered Evocation
+904,304,11,2,1,"Beginning at 10th level, you can add your Intelligence modifier to one damage roll of any wizard evocation spell you cast."
+905,305,11,1,0,Overchannel
+906,305,11,2,1,"Starting at 14th level, you can increase the power of your simpler spells. When you cast a wizard spell of 1st through 5th level that deals damage, you can deal maximum damage with that spell."
+907,305,11,2,2,"The first time you do so, you suffer no adverse effect. If you use this feature again before you finish a long rest, you take 2d12 necrotic damage for each level of the spell, immediately after you cast it. Each time you use this feature again before finishing a long rest, the necrotic damage per spell level increases by 1d12. This damage ignores resistance and immunity."

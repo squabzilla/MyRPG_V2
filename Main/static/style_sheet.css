@@ -1,0 +1,42 @@
+/*
+Class names cannot contain spaces.
+
+An element can have multiple classes, which allows you the combine multiple styling rules for different classes to apply to a single element.
+
+Element example:
+input {
+    outline: none;
+    border-style: none;
+  }
+
+Class example, of class called input:
+.input {
+    outline: none;
+    border-style: none;
+  }
+
+bootstrap remove outline:
+  class="form-control shadow-none"
+*/
+
+
+/*input {
+    outline: none;
+    border-style: none;
+  }
+*/
+
+p {
+  margin: 0;
+  padding: 0;
+  line-height: 1.25em;
+}
+
+/*
+div {
+  display: flex;
+
+justify-content: center;
+
+align-items: center;
+}

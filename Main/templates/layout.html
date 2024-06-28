@@ -1,0 +1,103 @@
+<!-- 
+Copied basic html shell from:
+https://getbootstrap.com/docs/5.3/getting-started/introduction/
+specifically from "2. Include Bootstrap’s CSS and JS."
+and modified it from there
+-->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- http://getbootstrap.com/docs/5.3/ -->
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    
+    <link href="/static/style_sheet.css" rel="stylesheet"> <!-- custom CSS needs to load after bootstrap CSS -->
+
+    <title>{% block title %}{% endblock %}</title>
+  </head>
+
+  <body>
+    <header>
+    <!-- below: copied basic nav-bar html shell from: CS50 Week 9 C$50 Finance layout.html (that was provided to us by CS50), then modified from there-->
+      <nav class="bg-light border navbar navbar-expand-md navbar-light">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="/">Dinos and dragons and demons, oh my!</a>
+        <!--
+        <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon">BUTTONT-TEXT</span>
+        </button>
+        -->
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav me-auto mt-2">
+              <li class="nav-item"><a class="nav-link" href="/character_creator">Create Character</a></li>
+              <!--<li class="nav-item"><a class="nav-link" href="/testing">Testing</a></li>-->
+              <li class="nav-item"><a class="nav-link" href="/view_character">View Current Character</a></li>
+            
+            {% if session["user_id"] %}
+            <li class="nav-item"><a class="nav-link" href="/load_character">Load Existing Character</a></li>
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2">
+              
+              <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+            </ul>
+            {% else %}
+            </ul>
+            <ul class="navbar-nav ms-auto mt-2">
+              <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+              <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+            </ul>
+            {% endif %}
+          </div>
+        </div>
+      </nav>
+  {% if get_flashed_messages() %}
+        <div class="alert alert-primary mb-0 text-center" role="alert">
+          {{ get_flashed_messages() | join(" ") }}
+        </div>
+    {% endif %}
+  
+  <!-- above: copied basic nav-bar html shell from: CS50 Week 9 C$50 Finance layout.html (that was provided to us by CS50), then modified from there-->
+    
+    {% block header %}{% endblock %}</div></header>
+    <!-- in case I want to add anything to header... but the default should be no -->
+
+    
+    
+    <main><div>
+      {% if error %}
+        <p class=error><strong>Error:</strong> {{ error }}
+      {% endif %}
+      {% block main %}{% endblock %}
+    </div></main>
+    
+    <footer>
+      {% block footer %}{% endblock %}
+      <!--
+      The System Reference Document 5.1 is provided to you free of charge under the terms of the Creative Commons
+      Attribution 4.0 International License (“CC-BY-4.0”). You are free to use this content in any manner permitted by
+      that license as long as you include the following attribution statement in your own work:
+      -->
+      <!-- Note: will want to format this prettier at some point. -->
+      <br><br>
+      <div><i>
+      This work includes material taken from the System Reference Document 5.1 (“SRD 5.1”) by Wizards of
+      the Coast LLC and available at https://dnd.wizards.com/resources/systems-reference-document. The
+      SRD 5.1 is licensed under the Creative Commons Attribution 4.0 International License available at
+      https://creativecommons.org/licenses/by/4.0/legalcode.
+      </i></div>
+
+      <!-- below: copied the validator footer (and relevant png image) from: CS50 Week 9 C$50 Finance layout.html (that was provided to us by CS50)-->
+      <form action="https://validator.w3.org/check" class="text-center" enctype="multipart/form-data" method="post" target="_blank"><div>
+        <input name="doctype" type="hidden" value="HTML5">
+        <input name="fragment" type="hidden">
+        <input alt="Validate" src="/static/I_heart_validator.png" type="image"> <!--  https://validator.w3.org/ -->
+      </form>
+      <!-- above: copied the validator footer (and relevant png image) from: CS50 Week 9 C$50 Finance layout.html (that was provided to us by CS50)-->
+    </div></footer>
+  
+  </body>
+</html>

@@ -1,0 +1,7 @@
+attrib_id, attrib_name, attrib_abbrev
+0, Strength, STR
+1, Dexterity, DEX
+2, Constitution, CON
+3, Intelligence, INT
+4, Wisdom, WIS
+5, Charisma, CHA

@@ -1,0 +1,176 @@
+{% extends "layout.html" %}
+
+{% block title %}Character Creator{% endblock %}
+
+{% block header %}<h1>Character Creator</h1>{% endblock %}
+
+{% block main %}
+    <p>This is the character creator.</p>
+    
+    
+    {% if new_char.creation_step==1 %}
+        <p> We need a name </p>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0 border-0">
+            <input autocomplete="off" autofocus class="form-control w-auto" id="character_name" name="character_name" placeholder="Character Name" type="text" value="Bob" required="required">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+
+
+    {% elif new_char.creation_step==2 %}
+        <p> We need a race </p>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
+            <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="race_id" id="race_id">
+            </select>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <script type="module">
+            let race_response = await fetch('/get_race_dropdown');
+            let race_dropdown = await race_response.json();
+            //console.log(race_dropdown)
+            document.getElementById("race_id").insertAdjacentHTML("beforeend",race_dropdown)
+        </script>
+
+
+    {% elif new_char.creation_step==3 %}
+        <p> We need a class </p>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
+            <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="class_id" id="class_id">
+            </select>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <script type="module">
+            let class_response = await fetch('/get_class_dropdown');
+            let class_dropdown = await class_response.json();
+            //console.log(class_dropdown)
+            document.getElementById("class_id").insertAdjacentHTML("beforeend",class_dropdown)
+        </script>
+
+    {% elif new_char.creation_step==4 %}
+        <div name="ability_score_alert" id="ability_score_alert"></div>
+        <h1>Ability Scores </h1>
+        <p>You have 80 points total to assign to all 6 ability scores.</p>
+        <p>Ability scores have a minimum of 5, and a maximum of 18. So you cannot have an ability score below 5, or above 18.</p>
+        <!--
+        <p>Points left to assign:</p><span id="points_to_assign" name="points_to_assign">20</span>
+        Commenting this out because the initial value is currently incorrect, because I changed the default values
+        Need to unc-comment this piece and delete below pieces for final version
+        -->
+        <p>Points left to assign:</p>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0" onsubmit="checkPointsAssignedCorrectly();">
+            <b><span id="points_to_assign" name="points_to_assign">0</span></b><label for="points_to_assign">&nbsp;points left to assign.</label><br> <!-- &nbsp; adds a space at start of label -->
+            <!--
+            <input type="number" name="attr_str" id="attr_str" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_str">Strength Score</label><br>
+            <input type="number" name="attr_dex" id="attr_dex" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_dex">Dexterity Score</label><br>
+            <input type="number" name="attr_con" id="attr_con" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_con">Constitution Score</label><br>
+            <input type="number" name="attr_int" id="attr_int" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_int">Intelligence Score</label><br>
+            <input type="number" name="attr_wis" id="attr_wis" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_wis">Wisdom Score</label><br>
+            <input type="number" name="attr_cha" id="attr_cha" min="5" max="18" value="10" onchange="pointsToAssign()"/><label for="attr_cha">Charisma Score</label><br>
+            For now, leaving the default values as valid ones so I don't have to assign values when testing
+            Need to unc-comment this piece and delete below pieces for final version
+            -->
+            <input type="number" name="attr_str" id="attr_str" min="5" max="18" value="14" onchange="pointsToAssign()"/><label for="attr_str">Strength Score</label><br>
+            <input type="number" name="attr_dex" id="attr_dex" min="5" max="18" value="14" onchange="pointsToAssign()"/><label for="attr_dex">Dexterity Score</label><br>
+            <input type="number" name="attr_con" id="attr_con" min="5" max="18" value="13" onchange="pointsToAssign()"/><label for="attr_con">Constitution Score</label><br>
+            <input type="number" name="attr_int" id="attr_int" min="5" max="18" value="13" onchange="pointsToAssign()"/><label for="attr_int">Intelligence Score</label><br>
+            <input type="number" name="attr_wis" id="attr_wis" min="5" max="18" value="13" onchange="pointsToAssign()"/><label for="attr_wis">Wisdom Score</label><br>
+            <input type="number" name="attr_cha" id="attr_cha" min="5" max="18" value="13" onchange="pointsToAssign()"/><label for="attr_cha">Charisma Score</label><br>
+            <input type="hidden" name="points_assigned" id="points_assigned" value="60" />
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <script>
+            const ability_alert = document.getElementById('ability_score_alert')
+            const appendAlert = (message, type) => {
+                const ability_alert_box = document.createElement('div')
+                ability_alert_box.innerHTML = [
+                `<div class="alert alert-warning alert-dismissible" role="alert">`,
+                `   <div>"Error - Please assign all of your points."</div>`,
+                '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+                '</div>'
+                ].join('')
+                ability_alert.append(ability_alert_box)
+            }
+            function pointsToAssign() {
+                var str_score = Number(document.getElementById("attr_str").value);
+                var dex_score = Number(document.getElementById("attr_dex").value);
+                var con_score = Number(document.getElementById("attr_con").value);
+                var int_score = Number(document.getElementById("attr_int").value);
+                var wis_score = Number(document.getElementById("attr_wis").value);
+                var cha_score = Number(document.getElementById("attr_cha").value);
+                var ability_sum = str_score + dex_score + con_score + int_score + wis_score + cha_score;
+                document.getElementById("points_assigned").value = ability_sum.toString();
+                var points_left = 80 - ability_sum;
+                document.getElementById("points_to_assign").innerHTML = points_left.toString();
+            }
+            function checkPointsAssignedCorrectly() {
+                var points_left = Number(document.getElementById("points_to_assign").innerHTML);
+                if (points_left != 0) {
+                    console.log("Prevent default")
+                    event.preventDefault();
+                    //alert("Please assign all of your points.")
+                    //document.getElementById("ability_score_alert").innerHTML = ability_alert_text;
+                    appendAlert()
+                    return false;
+                }
+                else {
+                    console.log("returning true, we should go to next page now")
+                    return true
+                }
+                //if (points_left < 0) {
+                    //alert("Error - too many points assigned.")
+                //}
+            }
+        </script>
+
+
+    {% elif new_char.creation_step==5 %}
+        <p> We need a background </p>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
+            <select class="form-select" class="form-control w-auto" aria-label="Default select example" name="background_id" id="background_id">
+            </select>
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </form>
+        <script type="module">
+            let background_response = await fetch('/get_background_dropdown');
+            let background_dropdown = await background_response.json();
+            document.getElementById("background_id").insertAdjacentHTML("beforeend",background_dropdown)
+        </script>
+    
+    {% elif new_char.creation_step==6 %}
+
+    <h1>Features</h1>
+    <div name="auto_features" id="auto_features">
+    </div>
+    <script type="module">
+        let features_response = await fetch('/get_lvl1features');
+        let features_items = await features_response.json();
+        document.getElementById("auto_features").insertAdjacentHTML("beforeend",features_items)
+    </script>
+
+
+
+    {% elif new_char.creation_step==7 %}
+        <h1>Spells</h1>
+        <div name="auto_spells" id="auto_spells">
+        </div>
+        <script type="module">
+            let features_response = await fetch('/get_char_lvl1_spells');
+            let features_items = await features_response.json();
+            document.getElementById("auto_spells").insertAdjacentHTML("beforeend",features_items)
+        </script>
+    
+    
+    {% elif new_char.creation_step==8 %}
+        <h1>You've completed your character!</h1>
+        <form action="/character_creator" method="POST" class="form-control mx-auto w-auto border-0">
+            <button class="btn btn-primary" type="submit">Complete Character</button>
+        </form>
+    {% else %}
+        <h1>Error - Forbidden Tome.</h1>
+        <p>You shouldn't be here. Something went wrong.</p>
+        <p><h1><a class="nav-link" href="/">Click here to go back to the homepage.</a></h1>
+
+    {% endif %}
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

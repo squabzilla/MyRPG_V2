@@ -1,0 +1,17 @@
+I have a lot of ideas for how I'd change a lot of aspects of D&D 5E,
+to the point that my "houserules" for it would wind up being an entirely different game.
+
+This idea is a very large undertaking, and CS principles teaches us to break down problems into smaller chunks.
+
+The first goal will be to create my own database of spells, which I can then filter by various attributes.
+To start:
+Spells_Name_Database (1-to-1 relationship)
+Spell_ID (unique, primary key), Spell_Name (Unique), Other-attributes_tbd_1, Other-attributes_tbd_2, etc.
+
+Spell_Description_Database (1-to-1 relationship)
+Spell_ID (unique, foreign-key reference Spells_Name_Database), Description (VERY LARGE amount of text)
+Description in theory will be unique, but in practice, the description can have potentially hundreds of words
+and thousands of characters, so we're not gonna spend the computational-power checking uniqueness.
+
+Spell_Tags_Database (many-to-many relationship)
+Spell_ID (NOT unique, foreign-key reference Spells_Name_Database)

@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}Load Character{% endblock %}
+
+{% block header %}Load Character{% endblock %}
+
+{% block main %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Delete</th>
+      <th scope="col">Name</th>
+      <th scope="col">Race</th>
+      <th scope="col">Class</th>
+    </tr>
+  </thead>
+<tbody>
+  <!-- a dropdown button would be really pretty here: https://getbootstrap.com/docs/5.3/components/dropdowns/ -->
+  {% if user_list_characters != [] %}
+  {% for character in user_list_characters %}
+  <tr>
+    <td>
+      <form action="/load_character" method="POST" class="form-control mx-auto w-auto border-0">
+        <input type="hidden" value={{ character['character_id'] }} />
+        <!--<button class="btn btn-danger" type="submit">X</button>-->
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal_{{ character['character_id'] }}">X</button>
+      </form>
+    </td>
+    <td>{{ character["name"] }}</td>
+    <td>{{ character["race_name"] }}</td>
+    <td>{{ character["class_name"] }}</td>
+    <td>
+      <form action="/load_button" method="POST" class="form-control mx-auto w-auto border-0">
+        <input type="hidden" name="char_id" value={{ character['character_id'] }} />
+        <button class="btn btn-primary" type="submit">Load</button>
+      </form>
+    </td>
+  </tr>
+  <div class="modal fade" id="exampleModal_{{ character['character_id'] }}" tabindex="-1" aria-labelledby="exampleModalLabel_{{ character['character_id'] }}" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel_{{ character['character_id'] }}">Delete {{ character["name"] }}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Are you sure you want to delete {{ character["name"] }} the {{ character["race_name"] }} {{ character["class_name"] }}?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <form action="/delete_button" method="POST" class="form-control mx-auto w-auto border-0">
+            <input type="hidden" name="char_id" value={{ character['character_id'] }} />
+            <button class="btn btn-danger" type="submit">Yes, delete {{ character["name"] }}.</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
+</tbody>
+</table>
+
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

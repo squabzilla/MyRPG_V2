@@ -1,0 +1,281 @@
+{% extends "layout.html" %}
+
+{% block title %}Character View{% endblock %}
+
+{% block header %}View your Character
+<br>
+<form action="/save_button" method="POST" class="form-control mx-auto w-auto border-0">
+    <button class="btn btn-primary" type="submit">Save Character!</button>
+</form>
+{% endblock %}
+
+{% block main %}
+<div class="container text-center">
+    <div class="row align-items-start">
+        <div class="col" name="character_basics" id="character_basics">
+            <h2>Character name: {{pc_char.name}}</h2>
+            <p>Race: {{pc_char.race_name}}</p>
+            <p>Class: {{pc_char.level1_class_name}}</p>
+            <p>Background: {{pc_char.background_name}}</p>
+        </div>
+        <div class="col" name="ability_scores" id="ability_scores">
+            <h2>Ability Scores</h2>
+            <p>Strength: {{pc_char.str_score}}</p>
+            <p>Dexterity: {{pc_char.dex_score}}</p>
+            <p>Constitution: {{pc_char.con_score}}</p>
+            <p>Intelligence: {{pc_char.int_score}}</p>
+            <p>Wisdom: {{pc_char.wis_score}}</p>
+            <p>Charisma: {{pc_char.cha_score}}</p>
+        </div>
+    </div>
+    <br>
+    <div class="row align-items-start">
+    {% if pc_char.list_cantrips == [] %}
+        <div class="col" name="char_features" id="char_features">
+            <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
+        </div>
+        {% elif pc_char.list_cantrips != [] %}
+        <div class="col" name="char_features" id="char_features">
+            <h2 id="mainFeaturesHeader" name="mainFeaturesHeader">Features</h2>
+        </div>
+        <div class="col" name="char_spells" id="char_spells">
+            <h2 id="mainSpellsHeader" name="mainSpellsHeader">Spells</h2>
+            <div class="accordion" id="accordionSpells">
+                <div class="accordion-item"> <!-- cantrips -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsZero" aria-expanded="false" aria-controls="collapseSpellsZero">
+                            Cantrips
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsZero" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Cantrips are minor spells that you can cast all day long.</p>
+                        </div>
+                    </div>
+                </div>
+                <script type="module">
+                    let parentFeature = "parentFeature=collapseSpellsZero"
+                    let spellLevel = "spellLevel=0"
+                    let spells_0_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_0_list = await spells_0_response.json();
+                    document.getElementById("collapseSpellsZero").insertAdjacentHTML("beforeend",spells_0_list)
+                </script>
+                {% if pc_char.list_1stlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 1stLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsOne" aria-expanded="false" aria-controls="collapseSpellsOne">
+                            First-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsOne" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many first-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 1stLevelSpells -->
+                <script type="module"> // start 1stLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsOne"
+                    let spellLevel = "spellLevel=1"
+                    let spells_1_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_1_list = await spells_1_response.json();
+                    document.getElementById("collapseSpellsOne").insertAdjacentHTML("beforeend",spells_1_list)
+                </script> <!-- end 1stLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_2ndlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 2ndLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsTwo" aria-expanded="false" aria-controls="collapseSpellsTwo">
+                            Second-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsTwo" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many second-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 2ndLevelSpells -->
+                <script type="module"> // start 2ndLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsTwo"
+                    let spellLevel = "spellLevel=2"
+                    let spells_2_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_2_list = await spells_2_response.json();
+                    document.getElementById("collapseSpellsTwo").insertAdjacentHTML("afterend",spells_2_list)
+                </script> <!-- end 2ndLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_3rdlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 3rdLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsThree" aria-expanded="false" aria-controls="collapseSpellsThree">
+                            Third-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsThree" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many third-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 3rdLevelSpells -->
+                <script type="module"> // start 3rdLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsThree"
+                    let spellLevel = "spellLevel=3"
+                    let spells_3_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_3_list = await spells_3_response.json();
+                    document.getElementById("collapseSpellsThree").insertAdjacentHTML("afterend",spells_3_list)
+                </script> <!-- end 3rdLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_4thlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 4thLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsFour" aria-expanded="false" aria-controls="collapseSpellsFour">
+                            Fourth-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsFour" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many fourth-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 4thLevelSpells -->
+                <script type="module"> // start 4thLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsFour"
+                    let spellLevel = "spellLevel=4"
+                    let spells_4_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_4_list = await spells_4_response.json();
+                    document.getElementById("collapseSpellsFour").insertAdjacentHTML("afterend",spells_4_list)
+                </script> <!-- end 4thLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_5thlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 5thLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsFive" aria-expanded="false" aria-controls="collapseSpellsFive">
+                            Fifth-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsFive" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many fifth-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 5thLevelSpells -->
+                <script type="module"> // start 5thLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsFive"
+                    let spellLevel = "spellLevel=5"
+                    let spells_5_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_5_list = await spells_5_response.json();
+                    document.getElementById("collapseSpellsFive").insertAdjacentHTML("afterend",spells_5_list)
+                </script> <!-- end 5thLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_6thlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 6thLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsSix" aria-expanded="false" aria-controls="collapseSpellsSix">
+                            Sixth-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsSix" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many sixth-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 6thLevelSpells -->
+                <script type="module"> // start 6thLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsSix"
+                    let spellLevel = "spellLevel=6"
+                    let spells_6_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_6_list = await spells_6_response.json();
+                    document.getElementById("collapseSpellsSix").insertAdjacentHTML("afterend",spells_6_list)
+                </script> <!-- end 6thLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_7thlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 7thLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsSeven" aria-expanded="false" aria-controls="collapseSpellsSeven">
+                            Seventh-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsSeven" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many seventh-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 7thLevelSpells -->
+                <script type="module"> // start 7thLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsSeven"
+                    let spellLevel = "spellLevel=7"
+                    let spells_7_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_7_list = await spells_7_response.json();
+                    document.getElementById("collapseSpellsSeven").insertAdjacentHTML("afterend",spells_7_list)
+                </script> <!-- end 7thLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_8thlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 8thLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsEight" aria-expanded="false" aria-controls="collapseSpellsEight">
+                            Eighth-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsEight" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many eighth-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 8thLevelSpells -->
+                <script type="module"> // start 8thLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsEight"
+                    let spellLevel = "spellLevel=8"
+                    let spells_7_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_7_list = await spells_7_response.json();
+                    document.getElementById("collapseSpellsEight").insertAdjacentHTML("afterend",spells_7_list)
+                </script> <!-- end 8thLevelSpells script -->
+                {% endif %}
+                {% if pc_char.list_9thlvlSpells != [] %}
+                <div class="accordion-item"> <!-- 9thLevelSpells -->
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSpellsNine" aria-expanded="false" aria-controls="collapseSpellsNine">
+                            Ninth-level Spells
+                        </button>
+                    </h2>
+                    <div id="collapseSpellsNine" class="accordion-collapse collapse" data-bs-parent="#accordionSpells">
+                        <div class="accordion-body">
+                            <p>Limitations on how many ninth-level spells you can cast will go here.</p>
+                        </div>
+                    </div>
+                </div> <!-- end 9thLevelSpells -->
+                <script type="module"> // start 9thLevelSpells script
+                    let parentFeature = "parentFeature=collapseSpellsNine"
+                    let spellLevel = "spellLevel=9"
+                    let spells_9_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+                    let spells_9_list = await spells_9_response.json();
+                    document.getElementById("collapseSpellsNine").insertAdjacentHTML("afterend",spells_9_list)
+                </script><!-- end 9thLevelSpells script -->
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    <!-- NOTES:
+        Having spells divied by level seems like the most sensible way to display them
+        might as well show the spell-casting attribute for the spell since it's cute
+        Spell descriptions will be added later, spell attack/spell save DC is kinda pointless without spell descriptions
+        a nice accordion with a table view of all spells? That seems good.
+    -->
+    </div>
+</div>
+<script type="module">
+    let features_response = await fetch('/view_char_features');
+    let features_list = await features_response.json();
+    //console.log(features_list)
+    document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
+</script>
+<!--
+<script type="module">
+    let parentFeature = "parentFeature=parentFeature"
+    let spellLevel = "spellLevel=INT"
+    let features_response = await fetch('/view_char_spells' + '?' + parentFeature + '&' + spellLevel);
+    let features_list = await features_response.json();
+    document.getElementById("mainFeaturesHeader").insertAdjacentHTML("afterend",features_list)
+</script>
+-->
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

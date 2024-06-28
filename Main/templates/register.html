@@ -1,0 +1,32 @@
+<!--
+copied register.html file from the register.html I created for the CS50 Week 9 C$50 Finance problem
+-->
+{% extends "layout.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block header %}Register{% endblock %}
+
+{% block main %}
+    <h1>Register</h1>
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" required="required">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password" required="required">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Re-enter your password" type="password" required="required">
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Register</button>
+        </div>
+    </form>
+    <!--
+        Note: there is a little client-side input-validation here, that can be relatively easily bypassed by a savy-user
+        But most importantly, server-side input-validation also exists
+    -->
+{% endblock %}
+
+{% block footer %}{% endblock %}

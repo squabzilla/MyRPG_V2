@@ -1,0 +1,13 @@
+pc_class_id, pc_class_name,pc_class_hitdie
+0, Barbarian,12
+1, Bard,8
+2, Cleric,8
+3, Druid,8
+4, Fighter,10
+5, Monk,8
+6, Paladin,10
+7, Ranger,10
+8, Rogue,8
+9, Sorcerer,6
+10, Warlock,8
+11, Wizard,6

@@ -1,0 +1,11 @@
+As characters level up:
+I'll make a one-to-many table with:
+user_id     class_id        class_level     subclass_id
+
+every class they add is a new-entry in this database
+subclass defaults to 0, changes when they get to a level with a subclass
+
+when they level up a class, this table is referenced to determine what their next level gets them
+(including figuring out if they have a level of the new class in the first place)
+
+then their features/spells are updated

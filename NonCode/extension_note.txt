@@ -1,0 +1,9 @@
+Mintlify Doc Writer for Python, JavaScript, TypeScript, C++, PHP, Java, C#, Ruby & more
+
+This is the one that always wants to generate those doc-code-things I think
+
+Might be useful when I like actually intend to use it, but mostly it just gets in my way
+
+changed a setting so hopefully that won't happen (by default Ctrl + CLICK activated it, changed to Alt + Click)
+
+figure I should make a note of this somewhere

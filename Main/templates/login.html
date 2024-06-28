@@ -1,0 +1,33 @@
+<!--
+copied the login.html file from the login.html I modified for the CS50 Week 9 C$50 Finance problem,
+the original login.html being the one provided to us by CS50 as part of the CS50 Week 9 C$50 Finance problem
+-->
+
+{% extends "layout.html" %}
+
+{% block title %}Log In{% endblock %}
+
+{% block header %}Log In{% endblock %}
+
+{% block main %}
+    <form action="/login" method="post" class="form-control mx-auto w-auto border-0">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+    <br>
+    <p>Or if you haven't yet created an account, you can register below</p>
+    <form action="/register" method="POST" class="form-control mx-auto w-auto border-0">
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    <!--
+        Note: there is a little client-side input-validation here, that can be relatively easily bypassed by a savy-user
+        But most importantly, server-side input-validation also exists
+    -->
+{% endblock %}
+
+{% block footer %}{% endblock %}

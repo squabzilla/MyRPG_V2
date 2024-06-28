@@ -1,0 +1,221 @@
+Ranger%%%%%
+Nature's Hunter###
+Beginning at 1st level, Rangers are in tune with
+the magic of nature, and are supernaturally skilled
+at both tracking and hunting down their targets. You
+know the Hunter's Mark and Druidcraft cantrips.
+Well Travelled###
+Rangers typically have a history of travelling all
+over the world (or at least studying it.) Choose one
+of your skill proficiencies. Your proficiency bonus
+is doubled for any ability check you make that uses
+the chosen skill.
+You can also speak, read, and write two additional
+languages.
+Fighting Style###
+At 2nd level, you adopt a particular style of fighting
+as your specialty. Choose one of the following
+options. You can't take a Fighting Style option more
+than once, even if you later get to choose again.
+Archery#$#
+You gain a +2 bonus to attack rolls you make with
+ranged weapons.
+Defense#$#
+While you are wearing armor, you gain a +1 bonus to
+AC.
+Dueling#$#
+When you are wielding a melee weapon in one hand
+and no other weapons, you gain a +2 bonus to
+damage rolls with that weapon.
+Two-Weapon Fighting#$#
+When you engage in two-weapon fighting, you can
+add your ability modifier to the damage of the
+second attack.
+Spellcasting###
+By the time you reach 2nd level, you have learned to
+use the magical essence of nature to cast spells,
+much as a druid does.
+Spell Slots#$#
+The Ranger table shows how many spell slots you
+have to cast your spells of 1st level and higher. To
+cast one of these spells, you must expend a slot of
+the spell's level or higher. You regain all expended
+spell slots when you finish a long rest.
+For example, if you know the 1st-level spell animal
+friendship and have a 1st-level and a 2nd-level spell
+slot available, you can cast animal friendship using
+either slot.
+Spells Known of Ist Level and Higher#$#
+You know two 1st-level spells of your choice from
+the ranger spell list.
+The Spells Known column of the Ranger table
+shows when you learn more ranger spells of your
+choice. Each of these spells must be of a level for
+which you have spell slots. For instance, when you
+reach 5th level in this class, you can learn one new
+spell of 1st or 2nd level.
+Additionally, when you gain a level in this class,
+you can choose one of the ranger spells you know
+and replace it with another spell from the ranger
+spell list, which also must be of a level for which you
+have spell slots.
+Spellcasting Ability#$#
+Wisdom is your spellcasting ability for your ranger
+spells, since your magic draws on your attunement
+to nature. You use your Wisdom whenever a spell
+refers to your spellcasting ability. In addition, you
+use your Wisdom modifier when setting the saving
+throw DC for a ranger spell you cast and when
+making an attack roll with one.
+<b>Spell save DC</b> = 8 + your proficiency bonus +
+your Wisdom modifier.
+<b>Spell attack modifier</b> = your proficiency bonus +
+your Wisdom modifier.
+Spellcasting Focus#$#
+You can use a druidic focus (see Equipment) as a
+spellcasting focus for your ranger spells.
+Ranger Archetype###
+At 3rd level, you choose an archetype that you strive
+to emulate, such as the Hunter. Your choice grants
+you features at 3rd level and again at 7th, 11th, and
+15th level.
+Primeval Awareness###
+Beginning at 3rd level, you can use your action and
+expend one ranger spell slot to focus your
+awareness on the region around you. For 1 minute
+per level of the spell slot you expend, you can sense
+whether the following types of creatures are present
+within 1 mile of you (or within up to 6 miles if you
+are in your favored terrain): aberrations, celestials,
+dragons, elementals, fey, fiends, and undead. This
+feature doesn't reveal the creatures' location or
+number.
+Ability Score Improvement###
+When you reach 4th level, and again at 8th, 12th,
+16th, and 19th level, you can increase one ability
+score of your choice by 2, or you can increase two
+ability scores of your choice by 1. As normal, you
+can't increase an ability score above 20 using this
+feature.
+Extra Attack###
+Beginning at 5th level, you can attack twice, instead
+of once, whenever you take the Attack action on your
+turn.
+Alert Hunter###
+Beginning at 6th level, you have advantage on all 
+Pereption checks, and can't be surprised.
+In addition, when you cast the Hunter's Mark cantrip,
+it now lasts for up to 8 hours.
+Land's Stride###
+Starting at 8th level, moving through nonmagical
+difficult terrain costs you no extra movement. You
+can also pass through nonmagical plants without
+being slowed by them and without taking damage
+from them if they have thorns, spines, or a similar
+hazard.
+In addition, you have advantage on saving throws
+against plants that are magically created or
+manipulated to impede movement, such those
+created by the entangle spell.
+Once you are camouflaged in this way, you can try
+to hide by pressing yourself up against a solid
+surface, such as a tree or wall, that is at least as tall
+and wide as you are. You gain a +10 bonus to
+Dexterity (Stealth) checks as long as you remain
+there without moving or taking actions. Once you
+move or take an action or a reaction, you must
+camouflage yourself again to gain this benefit.
+Vanish###
+Starting at 14th level, you can use the Hide action as
+a bonus action on your turn. Also, you can't be
+tracked by nonmagical means, unless you choose to
+leave a trail.
+Feral Senses###
+At 18th level, you gain preternatural senses that help
+you fight creatures you can't see. When you attack a
+creature you can't see, your inability to see it doesnʼt
+impose disadvantage on your attack rolls against it.
+You are also aware of the location of any invisible
+creature within 30 feet of you, provided that the
+creature isn't hidden from you and you aren't
+blinded or deafened.
+Foe Slayer###
+At 20th level, you become an unparalleled hunter of
+your enemies. Once on each of your turns, you can
+add your Wisdom modifier to the attack roll or the
+damage roll of an attack you make against one of
+your favored enemies. You can choose to use this
+feature before or after the roll, but before any effects
+of the roll are applied.
+Additional Fighting Style###
+At 10th level, you can choose a second option from
+the Fighting Style class feature. 
+Additionally, when you cast Hunter's Mark, it now
+lasts for up to 24 hours.
+Hunter###
+Emulating the Hunter archetype means accepting
+your place as a bulwark between civilization and the
+terrors of the wilderness. As you walk the Hunter's
+path, you learn specialized techniques for fighting
+the threats you face, from rampaging ogres and
+hordes of orcs to towering giants and terrifying
+dragons.
+Hunter's Prey#$#
+At 3rd level, you gain one of the following features of
+your choice.
+<b>Colossus Slayer. Your tenacity can wear down the
+most potent foes. When you hit a creature with a
+weapon attack, the creature takes an extra 1d8
+damage if it's below its hit point maximum. You can
+deal this extra damage only once per turn.
+<b>Giant Killer. When a Large or larger creature
+within 5 feet of you hits or misses you with an attack,
+you can use your reaction to attack that creature
+immediately after its attack, provided that you can
+see the creature.
+<b>Horde Breaker. Once on each of your turns when
+you make a weapon attack, you can make another
+attack with the same weapon against a different
+creature that is within 5 feet of the original target
+and within range of your weapon.
+Defensive Tactics#$#
+At 7th level, you gain one of the following features of
+your choice.
+<b>Escape the Horde.</b> Opportunity attacks against
+you are made with disadvantage.
+<b>Multiattack Defense.</b> When a creature hits you
+with an attack, you gain a +4 bonus to AC against all
+subsequent attacks made by that creature for the
+rest of the turn.
+<b>Steel Will.</b> You have advantage on saving throws
+against being frightened.
+Multiattack#$#
+At 11th level, you gain one of the following features
+of your choice.
+<b>Volley.</b> You can use your action to make a ranged
+attack against any number of creatures within 10
+feet of a point you can see within your weapon's
+range. You must have ammunition for each target, as
+normal, and you make a separate attack roll for each
+target.
+<b>Whirlwind Attack.</b> You can use your action to
+make a melee attack against any number of
+creatures within 5 feet of you, with a separate attack
+roll for each target.
+Superior Hunter's Defense#$#
+At 15th level, you gain one of the following features
+of your choice.
+<b>Evasion.</b> When you are subjected to an effect, such
+as a red dragon's fiery breath or a lightning bolt spell,
+that allows you to make a Dexterity saving throw to
+take only half damage, you instead take no damage if
+you succeed on the saving throw, and only half
+damage if you fail.
+<b>Stand Against the Tide.</b> When a hostile creature
+misses you with a melee attack, you can use your
+reaction to force that creature to repeat the same
+attack against another creature (other than itself) of
+your choice.
+<b>Uncanny Dodge.</b> When an attacker that you can
+see hits you with an attack, you can use your
+reaction to halve the attack's damage against you.
